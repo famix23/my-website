@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 1️⃣ SEO SITE-WIDE SETTINGS -->
+    <title>Buy Verified Gaming Accounts & Items | GAMERX</title>
+    <meta name="description" content="Buy verified gaming accounts and items with instant delivery. Secure checkout, buyer protection, and full access guaranteed.">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind Configuration -->
+    <!-- Kept in HTML to ensure it loads before Tailwind processes the DOM -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            400: '#818cf8',
+                            500: '#6366F1', // Primary: Indigo
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        },
+                        success: {
+                            500: '#22C55E', // Green
+                        },
+                        danger: {
+                            500: '#EF4444', // Red
+                        },
+                        dark: {
+                            800: '#1F2937', // Card Surface
+                            900: '#111827', // Surface
+                            950: '#0B0E14', // Background
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-950 text-gray-200 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-500 selection:text-white pb-20 md:pb-0">
+
+    <!-- Navigation Group -->
+    <div id="main-nav" class="fixed w-full z-50 top-0">
+        <nav class="glass-nav">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <!-- Left: Logo & Name -->
+                    <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="navigateTo('home')">
+                        <svg class="h-8 w-8 text-brand-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+                        </svg>
+                        <span class="font-extrabold text-2xl text-white tracking-tight">GAMER<span class="text-brand-500">X</span></span>
+                    </div>
+
+                    <!-- Right: Trust Links -->
+                    <div class="hidden md:flex space-x-8 items-center">
+                        <button onclick="document.getElementById('delivery-info')?.scrollIntoView({behavior: 'smooth'})" class="text-gray-300 hover:text-white transition-colors text-sm font-semibold">How Delivery Works</button>
+                        <button onclick="navigateTo('support')" class="text-gray-300 hover:text-white transition-colors text-sm font-semibold">Support</button>
+                        <button onclick="showToast('Login coming soon')" class="text-gray-300 hover:text-white transition-colors text-sm font-semibold">Login / Orders</button>
+                        <button onclick="navigateTo('cart')" class="bg-brand-600 hover:bg-brand-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-lg shadow-brand-500/20 flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                            Cart (<span id="cart-count">0</span>)
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Trust Strip -->
+        <div class="trust-strip py-1.5 hidden md:block">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-[11px] font-medium text-brand-200 tracking-wide uppercase flex items-center justify-center gap-2">
+                    <svg class="w-3 h-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    🛡 Buyer Protection Included • Instant Delivery
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu" class="hidden md:hidden bg-dark-900 border-b border-gray-800 fixed top-16 w-full z-40">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <button onclick="navigateTo('home'); toggleMobileMenu()" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-dark-800 hover:text-brand-400">Home</button>
+            <button onclick="document.getElementById('delivery-info')?.scrollIntoView(); toggleMobileMenu()" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-dark-800 hover:text-brand-400">How Delivery Works</button>
+            <button onclick="navigateTo('support'); toggleMobileMenu()" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-dark-800 hover:text-brand-400">Support</button>
+            <button onclick="navigateTo('tracking'); toggleMobileMenu()" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-dark-800 hover:text-brand-400">Track Order</button>
+            <button onclick="navigateTo('cart'); toggleMobileMenu()" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-dark-800 hover:text-brand-400 text-brand-400">View Cart</button>
+        </div>
+        <div class="px-4 py-2 bg-dark-950 text-center border-t border-gray-800">
+            <p class="text-[10px] text-gray-400">🛡 Buyer Protection Included</p>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="flex-grow pt-24 md:pt-28">
+
+        <!-- VIEW: HOME -->
+        <div id="view-home" class="view-section active">
+            <!-- Hero -->
+            <div class="relative pt-8 pb-16 lg:pt-16 lg:pb-20 overflow-hidden bg-dark-950">
+                <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                        <div class="text-left">
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                                Buy Verified <br>
+                                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand-600">Gaming Accounts</span> <br>
+                                & Items
+                            </h1>
+                            <p class="text-gray-400 text-lg font-normal mb-8 leading-relaxed max-w-lg">
+                                Instant delivery • Buyer protection • Secure checkout
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                                <button onclick="document.getElementById('featured').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-center transition-all shadow-xl shadow-brand-500/20 active:scale-95 text-lg">Browse Products</button>
+                                <button onclick="document.getElementById('delivery-info').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 rounded-xl border border-gray-600 hover:border-white text-gray-300 hover:text-white font-bold text-center transition-all text-lg">How Delivery Works</button>
+                            </div>
+                            <p class="text-sm text-gray-500 font-medium flex items-center gap-2">
+                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Trusted store • Verified products • 24/7 support
+                            </p>
+                        </div>
+                        <!-- Hero Grid -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-dark-800 rounded-xl overflow-hidden shadow-lg border border-gray-800 transform hover:-translate-y-1 transition-all duration-300">
+                                <img src="https://placehold.co/400x300/0f172a/38bdf8?text=Valorant" class="w-full h-32 object-cover">
+                                <div class="p-3 bg-dark-900"><p class="text-sm font-bold text-white text-center">Valorant</p></div>
+                            </div>
+                            <div class="bg-dark-800 rounded-xl overflow-hidden shadow-lg border border-gray-800 transform hover:-translate-y-1 transition-all duration-300">
+                                <img src="https://placehold.co/400x300/0f172a/f472b6?text=Fortnite" class="w-full h-32 object-cover">
+                                <div class="p-3 bg-dark-900"><p class="text-sm font-bold text-white text-center">Fortnite</p></div>
+                            </div>
+                            <div class="bg-dark-800 rounded-xl overflow-hidden shadow-lg border border-gray-800 transform hover:-translate-y-1 transition-all duration-300">
+                                <img src="https://placehold.co/400x300/451a03/f59e0b?text=PUBG" class="w-full h-32 object-cover">
+                                <div class="p-3 bg-dark-900"><p class="text-sm font-bold text-white text-center">PUBG</p></div>
+                            </div>
+                            <div class="bg-dark-800 rounded-xl overflow-hidden shadow-lg border border-gray-800 transform hover:-translate-y-1 transition-all duration-300">
+                                <img src="https://placehold.co/400x300/3f3f46/d4d4d8?text=Clash+of+Clans" class="w-full h-32 object-cover">
+                                <div class="p-3 bg-dark-900"><p class="text-sm font-bold text-white text-center">Clash of Clans</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Filters -->
+            <div class="sticky top-20 md:top-24 z-30 bg-dark-950/95 backdrop-blur border-y border-gray-800 py-4 shadow-lg" id="shop-filters">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+                    <div class="flex overflow-x-auto space-x-2 pb-3 scrollbar-hide border-b border-gray-800/50">
+                        <button onclick="setGameFilter('all')" class="game-filter-btn active px-4 py-2 rounded-lg bg-brand-600 text-white text-sm whitespace-nowrap transition-colors font-bold shadow-md">All Games</button>
+                        <button onclick="setGameFilter('pubgm')" class="game-filter-btn px-4 py-2 rounded-lg bg-dark-800 text-gray-400 hover:text-white hover:bg-dark-700 text-sm whitespace-nowrap transition-colors font-medium">PUBG Mobile</button>
+                        <button onclick="setGameFilter('coc')" class="game-filter-btn px-4 py-2 rounded-lg bg-dark-800 text-gray-400 hover:text-white hover:bg-dark-700 text-sm whitespace-nowrap transition-colors font-medium">Clash of Clans</button>
+                        <button onclick="setGameFilter('genshin')" class="game-filter-btn px-4 py-2 rounded-lg bg-dark-800 text-gray-400 hover:text-white hover:bg-dark-700 text-sm whitespace-nowrap transition-colors font-medium">Genshin</button>
+                        <button onclick="setGameFilter('valorant')" class="game-filter-btn px-4 py-2 rounded-lg bg-dark-800 text-gray-400 hover:text-white hover:bg-dark-700 text-sm whitespace-nowrap transition-colors font-medium">Valorant</button>
+                    </div>
+                    <div class="flex overflow-x-auto space-x-2 scrollbar-hide">
+                        <button onclick="setServiceFilter('all')" class="service-filter-btn active px-3 py-1.5 rounded-lg bg-brand-900/50 text-brand-400 border border-brand-800 text-xs font-bold whitespace-nowrap transition-colors">All Types</button>
+                        <button onclick="setServiceFilter('account')" class="service-filter-btn px-3 py-1.5 rounded-lg bg-dark-800 text-gray-400 border border-transparent hover:bg-dark-700 text-xs font-medium whitespace-nowrap transition-colors">Accounts</button>
+                        <button onclick="setServiceFilter('item')" class="service-filter-btn px-3 py-1.5 rounded-lg bg-dark-800 text-gray-400 border border-transparent hover:bg-dark-700 text-xs font-medium whitespace-nowrap transition-colors">Items</button>
+                        <button onclick="setServiceFilter('topup')" class="service-filter-btn px-3 py-1.5 rounded-lg bg-dark-800 text-gray-400 border border-transparent hover:bg-dark-700 text-xs font-medium whitespace-nowrap transition-colors">Top-ups</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="featured" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6" id="product-container"></div>
+            </div>
+        </div>
+
+        <!-- VIEW: LANDING (ADS) -->
+        <div id="view-landing" class="view-section">
+            <div class="min-h-screen bg-dark-950 flex flex-col items-center pt-24 pb-12 px-4">
+                <div class="max-w-3xl text-center mb-12">
+                    <span class="inline-block px-3 py-1 bg-green-500/10 text-green-400 rounded-full text-xs font-bold mb-4 border border-green-500/20">✅ Verified Inventory</span>
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6">Buy Verified Gaming Accounts with <span class="text-brand-400">Instant Delivery</span></h1>
+                    <p class="text-gray-400 text-lg mb-8">Skip the grind. Get access to high-rank accounts and rare skins immediately.</p>
+                    <button onclick="navigateTo('home')" class="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl text-lg shadow-xl shadow-brand-500/20">Browse All Offers</button>
+                </div>
+                <!-- Social Proof -->
+                <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                    <div class="bg-dark-900 p-6 rounded-xl border border-gray-800 text-center">
+                        <div class="text-3xl font-bold text-white mb-1">15,000+</div>
+                        <div class="text-sm text-gray-400">Trusted Gamers</div>
+                    </div>
+                    <div class="bg-dark-900 p-6 rounded-xl border border-gray-800 text-center">
+                        <div class="text-3xl font-bold text-white mb-1">4.9/5</div>
+                        <div class="text-sm text-gray-400">Average Rating</div>
+                    </div>
+                    <div class="bg-dark-900 p-6 rounded-xl border border-gray-800 text-center">
+                        <div class="text-3xl font-bold text-white mb-1">0%</div>
+                        <div class="text-sm text-gray-400">Ban Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VIEW: PRODUCT DETAILS -->
+        <div id="view-product" class="view-section pb-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+                <button onclick="navigateTo('home')" class="mb-6 flex items-center text-gray-400 hover:text-white transition-colors font-medium text-sm">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to Shop
+                </button>
+                <div id="product-detail-container"></div>
+                <div id="mobile-buy-bar" class="mobile-sticky-buy"></div>
+            </div>
+        </div>
+
+        <!-- VIEW: CART -->
+        <div id="view-cart" class="view-section">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <h2 class="text-3xl font-extrabold text-white mb-8">Your Cart</h2>
+                <div id="cart-content-wrapper"></div>
+            </div>
+        </div>
+
+        <!-- VIEW: CHECKOUT -->
+        <div id="view-checkout" class="view-section">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="flex items-center gap-4 mb-8">
+                    <button onclick="navigateTo('cart')" class="text-gray-400 hover:text-white">← Back</button>
+                    <h2 class="text-3xl font-extrabold text-white">Manual Verification Payment</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="md:col-span-2 space-y-8">
+                        <div class="bg-dark-900 rounded-xl p-6 border border-gray-800">
+                            <h3 class="text-lg font-bold text-white mb-4 border-b border-gray-800 pb-2">1. Order Summary</h3>
+                            <div id="checkout-summary-items" class="space-y-2 mb-4 text-sm text-gray-300"></div>
+                            <div class="flex justify-between items-center text-xl font-bold text-white pt-2 border-t border-gray-800">
+                                <span>Total to Pay:</span>
+                                <span id="checkout-total-price" class="text-brand-400">$0.00</span>
+                            </div>
+                        </div>
+                        <div class="bg-dark-900 rounded-xl p-6 border border-gray-800">
+                            <h3 class="text-lg font-bold text-white mb-4 border-b border-gray-800 pb-2">2. Bank Payment Instructions</h3>
+                            <div class="bg-brand-900/20 border border-brand-500/30 rounded-lg p-4 mb-4">
+                                <p class="text-sm text-brand-100 font-medium mb-3">Please send the <strong class="text-white underline">exact amount</strong> to the bank account below. Use your Order ID as the reference.</p>
+                                <div class="space-y-2 text-sm text-gray-300 font-mono bg-dark-950 p-4 rounded border border-gray-700">
+                                    <p><span class="text-gray-500">Bank Name:</span> <span class="text-white font-bold">[Your Bank Name]</span></p>
+                                    <p><span class="text-gray-500">Account Name:</span> <span class="text-white font-bold">[Your Name / Business]</span></p>
+                                    <p><span class="text-gray-500">Account Number:</span> <span class="text-white font-bold">[XXXX-XXXX-XXXX]</span></p>
+                                    <p><span class="text-gray-500">Country:</span> <span class="text-white font-bold">[Your Country]</span></p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-yellow-500 flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                Orders are processed only after payment verification.
+                            </p>
+                        </div>
+                        <div class="bg-dark-900 rounded-xl p-6 border border-gray-800">
+                            <h3 class="text-lg font-bold text-white mb-4 border-b border-gray-800 pb-2">3. Upload Payment Proof</h3>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Upload Payment Screenshot / Receipt (Required)</label>
+                            <input type="file" id="payment-proof" accept="image/*,.pdf" class="block w-full text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-brand-600 file:text-white hover:file:bg-brand-500 transition-all bg-dark-950 rounded-lg border border-gray-700 cursor-pointer">
+                        </div>
+                        <div class="bg-dark-900 rounded-xl p-6 border border-gray-800">
+                            <h3 class="text-lg font-bold text-white mb-4 border-b border-gray-800 pb-2">4. Contact Information</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-1">Email Address (Mandatory)</label>
+                                    <input type="email" id="customer-email" required class="w-full bg-dark-950 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-brand-500 outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-1">WhatsApp / Phone (Recommended)</label>
+                                    <input type="tel" id="customer-phone" class="w-full bg-dark-950 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-brand-500 outline-none">
+                                </div>
+                                <p class="text-xs text-gray-500">We will contact you here after payment verification.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1 space-y-6">
+                        <div class="bg-dark-900 p-6 rounded-xl border border-gray-800 sticky top-24">
+                            <div class="mb-6 space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-brand-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                    <div><h4 class="text-sm font-bold text-white">Secure Manual Verification</h4><p class="text-xs text-gray-400 mt-1">All bank payments are manually verified by our team. If delivery fails, full refund guaranteed.</p></div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <div><h4 class="text-sm font-bold text-white">Buyer Protection</h4><p class="text-xs text-gray-400 mt-1">If the account does not match description, you get a refund.</p></div>
+                                </div>
+                            </div>
+                            <div class="bg-red-900/20 border border-red-500/30 p-3 rounded-lg mb-6">
+                                <p class="text-xs text-red-300 font-medium text-center">⚠️ Sending incorrect amounts or fake receipts will result in order cancellation.</p>
+                            </div>
+                            <button onclick="submitOrder()" class="w-full bg-success-500 hover:bg-green-600 text-white py-4 rounded-xl font-bold text-lg transition-all shadow-lg shadow-green-500/25 flex items-center justify-center gap-2">Submit Payment for Verification</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VIEW: ORDER STATUS -->
+        <div id="view-order-tracking" class="view-section">
+            <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <h2 class="text-3xl font-extrabold text-white mb-8 text-center">Order Status</h2>
+                <div id="status-container" class="bg-dark-900 rounded-xl border border-gray-800 p-8 text-center">
+                    <div id="status-empty">
+                        <svg class="w-16 h-16 text-gray-700 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <p class="text-gray-400 mb-4">No active order found in this session.</p>
+                        <button onclick="navigateTo('home')" class="text-brand-400 hover:text-brand-300 underline">Browse Shop</button>
+                    </div>
+                    <div id="status-active" class="hidden text-left">
+                        <div class="flex justify-between items-center border-b border-gray-800 pb-4 mb-6">
+                            <span class="text-gray-400 text-sm">Order ID: <span id="status-id" class="text-white font-mono">#0000</span></span>
+                            <span id="status-badge" class="px-3 py-1 rounded-full text-xs font-bold uppercase">Pending</span>
+                        </div>
+                        <div id="status-message-box" class="bg-yellow-900/20 border border-yellow-500/30 p-4 rounded-lg mb-8 text-center">
+                            <h3 id="status-title" class="text-lg font-bold text-yellow-400 mb-2">🟡 Pending Verification</h3>
+                            <p id="status-desc" class="text-sm text-yellow-100">Your payment is under review. Verification usually takes 5–30 minutes.</p>
+                        </div>
+                        <div id="status-delivery" class="hidden bg-green-900/10 border border-green-500/30 rounded-xl p-6">
+                            <h4 class="text-lg font-bold text-green-400 mb-4 flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                Your Account Details
+                            </h4>
+                            <div class="bg-dark-950 p-4 rounded border border-gray-700 font-mono text-sm text-gray-300 space-y-2">
+                                <p><span class="text-gray-500">Username:</span> <span id="del-user" class="text-white select-all">---</span></p>
+                                <p><span class="text-gray-500">Password:</span> <span id="del-pass" class="text-white select-all">---</span></p>
+                                <p><span class="text-gray-500">Notes:</span> <span id="del-notes" class="text-brand-200">---</span></p>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-4 text-center">Please change your password immediately after logging in.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VIEW: SUPPORT -->
+        <div id="view-support" class="view-section">
+            <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <h2 class="text-3xl font-extrabold text-white mb-2">Support Center</h2>
+                <p class="text-gray-400 mb-8">Have an issue with an order? We reply within 15 minutes.</p>
+                <div class="bg-dark-800 border border-brand-900/30 p-4 rounded-lg mb-8 text-sm text-gray-300">
+                    <span class="font-bold text-brand-400">Anti-Scam Policy:</span> Never share your password with anyone. We will never ask for your login details outside of the official delivery dashboard.
+                </div>
+                <form onsubmit="event.preventDefault(); showToast('Support ticket #8291 created!'); navigateTo('home')" class="space-y-6 bg-dark-900 p-8 rounded-xl border border-gray-800">
+                    <input type="email" required placeholder="Email Address" class="w-full bg-dark-950 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-brand-500 outline-none">
+                    <textarea rows="4" required placeholder="Message" class="w-full bg-dark-950 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-brand-500 outline-none"></textarea>
+                    <button type="submit" class="w-full bg-brand-600 hover:bg-brand-500 text-white py-3 rounded-lg font-bold transition-all">Submit Ticket</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- VIEW: ADMIN -->
+        <div id="view-admin" class="view-section">
+             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <h2 class="text-3xl font-extrabold text-white mb-8">Admin Dashboard</h2>
+                
+                <!-- Orders Table -->
+                <div class="bg-dark-900 rounded-xl border border-gray-800 overflow-hidden mb-12">
+                    <div class="px-6 py-4 border-b border-gray-800 flex justify-between items-center">
+                        <h3 class="font-bold text-white">Incoming Orders</h3>
+                        <button onclick="renderAdminOrders()" class="text-xs text-brand-400 hover:text-white">Refresh</button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm text-gray-400">
+                            <thead class="bg-dark-950 text-gray-200 uppercase text-xs">
+                                <tr>
+                                    <th class="px-6 py-3">ID</th>
+                                    <th class="px-6 py-3">Item / Amount</th>
+                                    <th class="px-6 py-3">Proof</th>
+                                    <th class="px-6 py-3">Status</th>
+                                    <th class="px-6 py-3">Actions / Delivery</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-orders-body" class="divide-y divide-gray-800">
+                                <tr><td colspan="5" class="px-6 py-8 text-center">No orders yet.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold text-white mb-4">Post New Item</h3>
+                <form id="admin-form" onsubmit="handlePostItem(event)" class="bg-dark-900 p-8 rounded-xl border border-gray-800 space-y-6">
+                    <input type="text" id="admin-title" required placeholder="Item Title" class="w-full bg-dark-950 border border-gray-700 rounded-lg px-4 py-3 text-white">
+                    <input type="number" id="admin-price" required placeholder="Price" class="w-full bg-dark-950 border border-gray-700 rounded-lg px-4 py-3 text-white">
+                    <button type="submit" class="bg-brand-600 text-white px-6 py-2 rounded-lg font-bold">Post Item</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 border-t border-gray-800 mt-auto pb-8 md:pb-0">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="space-y-4">
+                    <div>
+                        <span class="font-extrabold text-2xl text-white tracking-tight">GAMER<span class="text-brand-500">X</span></span>
+                        <p class="mt-2 text-sm text-gray-400 leading-relaxed max-w-sm">We operate a private, admin-controlled store. All products are verified and delivered directly by us.</p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800">
+                        <p class="text-[10px] text-gray-500 leading-tight">All sales are final after successful delivery. Refunds apply only if delivery fails or product does not match description.</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-gray-200 tracking-wider uppercase mb-4">Support</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><button onclick="navigateTo('support')" class="hover:text-white">Contact Support</button></li>
+                        <li><a href="#" class="hover:text-white">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-gray-200 tracking-wider uppercase mb-4">Security</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-sm text-gray-400"><svg class="w-5 h-5 text-brand-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg> 🔒 Secure Manual Verification</li>
+                        <li class="flex items-center text-sm text-gray-400"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg> Buyer protection</li>
+                        <li class="mt-4"><button onclick="navigateTo('admin')" class="text-xs text-gray-600 hover:text-gray-400">Admin Access</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed top-20 right-4 z-[100] flex flex-col gap-2"></div>
+
+    <!-- External Script -->
+    <script src="script.js"></script>
+</body>
+</html>
